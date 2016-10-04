@@ -1,0 +1,107 @@
+function banco(){
+	var ncuenta=[];
+	var nombre=[];
+	var saldo=[];
+	var s="";
+	var acreedores=0;
+	var n=prompt("Cual es tu numero de cuenta?");
+	var usuario=0;
+	while(n>0){
+		ncuenta[usuario]=n;
+		n=prompt("Como te llamas?");
+		nombre[usuario]=n;
+		n=prompt("Cual es tu saldo?");
+		saldo[usuario]=parseInt(n);
+		n=prompt("Cual es tu numero de cuenta?");
+		usuario++;
+	}
+	for (var i=0;i<usuario;i++){
+		s+="numero de cuenta: "+ncuenta[i]+"  nombre: "+nombre[i]+"   ";
+		if (saldo[i]<0){
+			s+="Estado de la cuenta: Deudor";
+		}else if(saldo[i]>0){
+			s+="Estado de la cuenta: Acreedor";
+		}else{
+			s+="Estadp de la cuenta: Nulo";
+		}
+		s+="<br>"
+	}
+	for (var i=0;i<usuario;i++){
+		if(saldo[i]>0){
+			acreedores+=saldo[i];
+		}
+
+	}
+	document.write(s);
+		document.write("Saldo de acreedores: "+acreedores);
+	}
+	
+	function triangulo(){
+	
+	var base;
+	var altura;
+	var superficie;
+	var s = 0;
+	
+	for (var i = 1; i<=3;i++){
+	
+		base=prompt("indica la base:");
+		base=parseInt(base);
+		altura=prompt("ingrese la altura:");
+		altura=parseInt(altura);
+		superficie=base*altura/2;
+		if (superficie>12){
+		 s++;
+}
+		 document.write("Triangulo numero: " + i + "<br>");
+		 document.write("base: " + base + "<br>");
+		 document.write("altura: " + altura + "<br>");
+		 document.write("superficie: " + superficie + "<br>");
+		 
+
+}
+		document.write(s + " esta es la cantidad de triangulos con superficie superior a 12<br>");
+}
+
+function enteros() {
+
+var cantnegativos = 0;
+var cantpositivos = 0;
+var mult15 = 0;
+var valorpares= 0;
+var num;
+
+for(i = 1; i<=10;i++) {
+
+	num=prompt("introduce un valor");
+	num=parseInt(num);
+	if (num <0) {
+
+		cantnegativos++;
+	}
+
+	else {
+
+		if(num > 0) {
+
+			cantpositivos++;
+		}
+	}
+
+	if(num%15==0 && num !=0) {
+		mult15++;
+	}
+	if(num%2==0) {
+		valorpares=valorpares+num;
+	}
+}
+	document.write("el numero de valores negativos es de: " + cantnegativos + "<br>");
+	document.write("el numero de valores positivos es de: " + cantpositivos + "<br>");
+	document.write("el numero de multiplos de 15 es de: " + mult15 + "<br>");
+	document.write("el valor de la suma de los pares es de: " + valorpares + "<br>");
+
+
+}
+banco();
+triangulo();
+enteros();
