@@ -120,9 +120,50 @@ function banco(){
 		 document.write("base: " + base + "<br>");
 		 document.write("altura: " + altura + "<br>");
 		 document.write("superficie: " + superficie + "<br>");
-		 document.write(s + " esta es la cantidad de triangulos con superfiie superior a 12");
+		 
 
 }
-		
+		document.write(s + " esta es la cantidad de triangulos con superficie superior a 12<br>");
 }
-triangulo();
+
+function enteros() {
+
+var cantnegativos = 0;
+var cantpositivos = 0;
+var mult15 = 0;
+var valorpares= 0;
+var num;
+
+for(i = 1; i<=10;i++) {
+
+	num=prompt("introduce un valor");
+	num=parseInt(num);
+	if (num <0) {
+
+		cantnegativos++;
+	}
+
+	else {
+
+		if(num > 0) {
+
+			cantpositivos++;
+		}
+	}
+
+	if(num%15==0 && num !=0) {
+		mult15++;
+	}
+	if(num%2==0) {
+		valorpares=valorpares+num;
+	}
+}
+	document.write("el numero de valores negativos es de: " + cantnegativos + "<br>");
+	document.write("el numero de valores positivos es de: " + cantpositivos + "<br>");
+	document.write("el numero de multiplos de 15 es de: " + mult15 + "<br>");
+	document.write("el valor de la suma de los pares es de: " + valorpares + "<br>");
+
+
+}
+
+enteros();
